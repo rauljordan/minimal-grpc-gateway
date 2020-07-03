@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package minimalgateway.api;
+option go_package = "github.com/rauljordan/minimal-grpc-gateway/proto/api/v1";
+
+import "google/api/annotations.proto";
+
+service API {
+  // SignupUser with a simple username and password combination.
+  rpc SignupUser(SignupRequest) returns (SignupResponse) {
+    option (google.api.http) = {
+      post: "/api/v1/users/signup"
+      body: "*"
+    };
+  }
+}
+
+message SignupRequest {
+  string username = 1;
+
+  string password = 2;
+}
+
+message SignupResponse {
+  bytes jwt_key = 1;
+}
