@@ -32,5 +32,5 @@ Expected Behavior:
 Install protoc [here](https://google.github.io/proto-lens/installing-protoc.html), then
 
 ```text
-make
+make protos
 ```
