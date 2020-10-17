@@ -69,13 +69,13 @@ func main() {
 	if strings.Contains(*allowedOriginsFlag, ",") {
 		allowedOrigins = strings.Split(*allowedOriginsFlag, ",")
 	}
-	gatewaySrv := gateway.New(
-		ctx,
-		grpcGatewayAddress,
-		grpcServerAddress,
-		nil, /*optional http mux */
-		allowedOrigins,
-	)
+	gatewaySrv := gateway.New(ctx, &gateway.Config{
+		GatewayAddress:      grpcGatewayAddress,
+		RemoteAddress:       grpcServerAddress,
+		Mux:                 nil, /*optional http mux */
+		AllowedOrigins:      allowedOrigins,
+		EndpointsToRegister: []gateway.RegistrationFunc{pb.RegisterAPIHandlerFromEndpoint},
+	})
 	gatewaySrv.Start()
 
 	// Listen for any process interrupts.

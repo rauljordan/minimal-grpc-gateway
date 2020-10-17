@@ -39,6 +39,8 @@ github.com/pmezard/go-difflib v1.0.0/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZN
 github.com/prometheus/client_model v0.0.0-20190812154241-14fe0d1b01d4/go.mod h1:xMI15A0UPsDsEKsMN9yxemIoYk6Tm2C1GtYGdfGttqA=
 github.com/rauljordan/minimal-grpc-gateway v0.0.0-20200703041001-7dbd7497568b h1:fjAE26jaeQyd0/kzy5Y01SLxZl6X5ohw679fpk95lJk=
 github.com/rauljordan/minimal-grpc-gateway v0.0.0-20200703041001-7dbd7497568b/go.mod h1:ZJxSim1G2lZfZffZ/GWTWVun9ty4BeJcpmweEaM8GnY=
+github.com/rauljordan/minimal-grpc-gateway v0.0.0-20201017182039-4d53dbe0ae72 h1:pEq1KDNWsS6vDefvHzStBf3jjc+xiuu3zrVlPPczIWA=
+github.com/rauljordan/minimal-grpc-gateway v0.0.0-20201017182039-4d53dbe0ae72/go.mod h1:HI31Z+FAfaWV86G7E959Ri76pRHAV3Z9W+lTjQuBDbg=
 github.com/rogpeppe/fastuuid v1.2.0/go.mod h1:jVj6XXZzXRy/MSR5jhDC/2q6DgLz+nrA6LYCDYWNEvQ=
 github.com/rs/cors v1.7.0 h1:+88SsELBHx5r+hZ8TCkggzSstaWNbDvThkVK8H6f9ik=
 github.com/rs/cors v1.7.0/go.mod h1:gFx+x8UowdsKA9AchylcLynDq+nNFfI8FkUZdN/jGCU=
