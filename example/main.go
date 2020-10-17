@@ -9,8 +9,8 @@ import (
 	"strings"
 	"syscall"
 
-	"github.com/rauljordan/minimal-grpc-gateway/gateway"
-	pb "github.com/rauljordan/minimal-grpc-gateway/proto/api/v1"
+	gateway "github.com/rauljordan/minimal-grpc-gateway"
+	pb "github.com/rauljordan/minimal-grpc-gateway/example/proto/api/v1"
 	"github.com/sirupsen/logrus"
 	"google.golang.org/grpc"
 )
