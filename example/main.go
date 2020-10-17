@@ -8,6 +8,7 @@ import (
 	"os/signal"
 	"strings"
 	"syscall"
+	"time"
 
 	gateway "github.com/rauljordan/minimal-grpc-gateway"
 	pb "github.com/rauljordan/minimal-grpc-gateway/example/proto/api/v1"
@@ -65,6 +66,7 @@ func main() {
 			logrus.Errorf("Could not serve gRPC: %v", err)
 		}
 	}()
+	time.Sleep(time.Second * 5)
 
 	allowedOrigins := []string{*allowedOriginsFlag}
 	if strings.Contains(*allowedOriginsFlag, ",") {
@@ -73,7 +75,6 @@ func main() {
 	gatewaySrv := gateway.New(ctx, &gateway.Config{
 		GatewayAddress:      grpcGatewayAddress,
 		RemoteAddress:       grpcServerAddress,
-		Mux:                 nil, /*optional http mux */
 		AllowedOrigins:      allowedOrigins,
 		EndpointsToRegister: []gateway.RegistrationFunc{pb.RegisterAPIHandlerFromEndpoint},
 	})

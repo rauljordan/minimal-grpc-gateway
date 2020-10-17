@@ -45,6 +45,8 @@ github.com/rauljordan/minimal-grpc-gateway v0.0.0-20201017182424-03d09eafd587 h1
 github.com/rauljordan/minimal-grpc-gateway v0.0.0-20201017182424-03d09eafd587/go.mod h1:ATo5HSrzLgnljjPK2JmbxmvSjMxDyZdIMWKchlCRODM=
 github.com/rauljordan/minimal-grpc-gateway v0.0.0-20201017185631-0029e208091c h1:pU1nMmfBQlTPDxdmx5IyNp2vqV0GtY/GuK/xDFv0XdM=
 github.com/rauljordan/minimal-grpc-gateway v0.0.0-20201017185631-0029e208091c/go.mod h1:ATo5HSrzLgnljjPK2JmbxmvSjMxDyZdIMWKchlCRODM=
+github.com/rauljordan/minimal-grpc-gateway v0.0.0-20201017185805-34612fe7e672 h1:FFGSZULfL8uawyOft+IIpfp7rni2IT3hM6W39e/yFiE=
+github.com/rauljordan/minimal-grpc-gateway v0.0.0-20201017185805-34612fe7e672/go.mod h1:ATo5HSrzLgnljjPK2JmbxmvSjMxDyZdIMWKchlCRODM=
 github.com/rauljordan/minimal-grpc-gateway/example v0.0.0-20201017182039-4d53dbe0ae72/go.mod h1:oIM2YBTB0jqiQtY5yrYDi3K03p5bA96gWaq4AqsuVMc=
 github.com/rogpeppe/fastuuid v1.2.0/go.mod h1:jVj6XXZzXRy/MSR5jhDC/2q6DgLz+nrA6LYCDYWNEvQ=
 github.com/rs/cors v1.7.0 h1:+88SsELBHx5r+hZ8TCkggzSstaWNbDvThkVK8H6f9ik=

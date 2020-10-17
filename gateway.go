@@ -48,11 +48,12 @@ type Gateway struct {
 // Accepts a context and optional http.ServeMux.
 func New(ctx context.Context, cfg *Config) *Gateway {
 	return &Gateway{
-		ctx:            ctx,
-		remoteAddr:     cfg.RemoteAddress,
-		gatewayAddr:    cfg.GatewayAddress,
-		mux:            http.NewServeMux(),
-		allowedOrigins: cfg.AllowedOrigins,
+		ctx:                 ctx,
+		remoteAddr:          cfg.RemoteAddress,
+		gatewayAddr:         cfg.GatewayAddress,
+		mux:                 http.NewServeMux(),
+		allowedOrigins:      cfg.AllowedOrigins,
+		endpointsToRegister: cfg.EndpointsToRegister,
 	}
 }
 
