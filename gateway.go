@@ -64,7 +64,7 @@ func (g *Gateway) Start() {
 
 	gwmux := gwruntime.NewServeMux(
 		gwruntime.WithMarshalerOption(
-			gwruntime.MIMEWildcard, &gwruntime.JSONPb{OrigName: false},
+			gwruntime.MIMEWildcard, &gwruntime.JSONPb{},
 		),
 	)
 	opts := []grpc.DialOption{grpc.WithInsecure()}
