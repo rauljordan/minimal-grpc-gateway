@@ -23,14 +23,15 @@ var (
 	)
 	grpcServerAddressFlag = flag.String(
 		"grpc-server-address",
-		"127.0.0.1:4000",
+		"localhost:4500",
 		"host:port address for the grpc server",
 	)
 	grpcGatewayAddressFlag = flag.String(
 		"grpc-gateway-address",
-		"127.0.0.1:8080",
+		"localhost:5000",
 		"host:port address for the grpc-JSON gateway server",
 	)
+	_ = pb.APIServer(&server{})
 )
 
 // Example gRPC server implementation.
@@ -49,7 +50,7 @@ func main() {
 
 	grpcGatewayAddress := *grpcGatewayAddressFlag
 	grpcServerAddress := *grpcServerAddressFlag
-	lis, err := net.Listen("tcp", grpcGatewayAddress)
+	lis, err := net.Listen("tcp", grpcServerAddress)
 	if err != nil {
 		logrus.Errorf("Could not listen to port in Start() %s: %v", grpcServerAddress, err)
 	}
@@ -59,7 +60,7 @@ func main() {
 	pb.RegisterAPIServer(grpcServer, &server{})
 
 	go func() {
-		logrus.WithField("address", grpcGatewayAddress).Info("gRPC server listening on port")
+		logrus.WithField("address", grpcServerAddress).Info("gRPC server listening on port")
 		if err := grpcServer.Serve(lis); err != nil {
 			logrus.Errorf("Could not serve gRPC: %v", err)
 		}

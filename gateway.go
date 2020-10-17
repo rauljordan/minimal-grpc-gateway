@@ -39,7 +39,6 @@ type Gateway struct {
 	gatewayAddr         string
 	remoteAddr          string
 	server              *http.Server
-	mux                 *http.ServeMux
 	allowedOrigins      []string
 	endpointsToRegister []RegistrationFunc
 	startFailure        error
@@ -48,15 +47,11 @@ type Gateway struct {
 // New returns a new gateway server which translates HTTP into gRPC.
 // Accepts a context and optional http.ServeMux.
 func New(ctx context.Context, cfg *Config) *Gateway {
-	mux := cfg.Mux
-	if mux == nil {
-		mux = http.NewServeMux()
-	}
 	return &Gateway{
 		ctx:            ctx,
 		remoteAddr:     cfg.RemoteAddress,
 		gatewayAddr:    cfg.GatewayAddress,
-		mux:            mux,
+		mux:            http.NewServeMux()
 		allowedOrigins: cfg.AllowedOrigins,
 	}
 }
@@ -88,11 +83,8 @@ func (g *Gateway) Start() {
 		if err := g.server.ListenAndServe(); err != http.ErrServerClosed {
 			log.WithError(err).Error("Failed to listen and serve")
 			g.startFailure = err
-			return
 		}
 	}()
-
-	return
 }
 
 // Status of grpc gateway. Returns an error if this service is unhealthy.
