@@ -51,7 +51,7 @@ func New(ctx context.Context, cfg *Config) *Gateway {
 		ctx:            ctx,
 		remoteAddr:     cfg.RemoteAddress,
 		gatewayAddr:    cfg.GatewayAddress,
-		mux:            http.NewServeMux()
+		mux:            http.NewServeMux(),
 		allowedOrigins: cfg.AllowedOrigins,
 	}
 }
