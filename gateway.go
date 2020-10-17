@@ -25,7 +25,6 @@ type RegistrationFunc func(
 type Config struct {
 	RemoteAddress       string
 	GatewayAddress      string
-	Mux                 *http.ServeMux
 	AllowedOrigins      []string
 	EndpointsToRegister []RegistrationFunc
 }
@@ -39,6 +38,7 @@ type Gateway struct {
 	gatewayAddr         string
 	remoteAddr          string
 	server              *http.Server
+	mux                 *http.ServeMux
 	allowedOrigins      []string
 	endpointsToRegister []RegistrationFunc
 	startFailure        error
